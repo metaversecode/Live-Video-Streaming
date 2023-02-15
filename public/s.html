@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta name="theme-color" content="#4285f4" />
+        <title>Live</title>
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+<script>
+    let binaryData = ""
+    const imgElement = document.createElement('img');
+    var a = ""
+    const socket = io.connect("http://localhost:3000");
+    
+    socket.on('send0', data => {
+        a= data.data2
+        imgElement.src = "data:image/jpg;base64," + data.data2
+        })
+        document.body.appendChild(imgElement);
+</script>
+    </body>
+</html>
